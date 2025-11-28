@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Header } from './components/Header'
+import { Footer } from './components/Footer'
 import './globals.css'
 
 const geistSans = Geist({
@@ -34,9 +35,10 @@ export default function RootLayout ({
         <link rel='preconnect' href='//logx.optimizely.com' />
         <script src='https://cdn.optimizely.com/js/5079706295336960.js'></script>
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} bg-white dark:bg-gray-900`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
