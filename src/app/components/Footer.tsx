@@ -1,5 +1,5 @@
 export const Footer = () => (
-  <footer className='bg-gray-100 dark:bg-gray-900 lg:mt-16'>
+  <footer className='lg:mt-16'>
     <div className='mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8'>
       <div className='flex justify-center text-indigo-600 dark:text-indigo-600'>
         <svg

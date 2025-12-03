@@ -1,7 +1,7 @@
 
 export default function HeroBannerText() {
   return (
-    <section className="bg-white lg:grid dark:bg-gray-900">
+    <section className="bg-white dark:bg-gray-900 bg-[url('https://images.unsplash.com/photo-1637825891035-1930cbd564dd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center lg:grid lg:h-screen lg:place-content-center">
       <div className="mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-prose text-center">
           <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl dark:text-white">

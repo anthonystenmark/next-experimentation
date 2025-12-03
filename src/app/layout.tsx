@@ -35,8 +35,8 @@ export default function RootLayout ({
         <link rel='preconnect' href='//logx.optimizely.com' />
         <script src='https://cdn.optimizely.com/js/5079706295336960.js'></script>
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-white dark:bg-gray-900`}>
-        <Header />
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Header transparent />
         {children}
         <Footer />
       </body>
