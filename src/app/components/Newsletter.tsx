@@ -1,0 +1,40 @@
+export const Newsletter = () => {
+  return (
+    <div className='mx-auto px-4 py-32 sm:px-6 lg:px-8 bg-white dark:bg-indigo-900'>
+      <div className='mx-auto max-w-prose text-center'>
+        <h2 className='text-2xl font-semibold text-gray-900 sm:text-3xl dark:text-white'>
+          Sign up for our newsletter
+        </h2>
+
+        <p className='mt-4 text-pretty text-gray-700 dark:text-gray-200'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+          doloremque saepe architecto maiores repudiandae amet perferendis
+          repellendus, reprehenderit voluptas sequi.
+        </p>
+      </div>
+
+      <form
+        action='#'
+        className='mx-auto mt-6 flex max-w-xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-center'
+      >
+        <label htmlFor='Email' className='flex-1'>
+          <span className='sr-only'> Email </span>
+
+          <input
+            type='email'
+            id='Email'
+            placeholder='Enter your email'
+            className='h-12 w-full rounded border-gray-300 shadow-sm dark:border-gray-600 dark:bg-gray-900 dark:text-white p-2'
+          />
+        </label>
+
+        <button
+          type='submit'
+          className='h-12 rounded-sm border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 dark:text-white dark:hover:bg-indigo-700 dark:hover:text-white'
+        >
+          Sign Up
+        </button>
+      </form>
+    </div>
+  )
+}

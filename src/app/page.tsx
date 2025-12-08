@@ -1,6 +1,7 @@
 import HeroBannerText from './components/HeroBanners/HeroBannerText'
 import { FeatureGrid } from './components/FeatureGrid'
 import { LogoCloud } from './components/LogoCloud'
+import { Newsletter } from './components/Newsletter'
 import styles from './page.module.css'
 
 export default function Home () {
@@ -8,7 +9,8 @@ export default function Home () {
     <main className={styles.main}>
       <HeroBannerText />
       <FeatureGrid />
-      <LogoCloud />
+      {/* <LogoCloud /> */}
+      <Newsletter />
     </main>
   )
 }
