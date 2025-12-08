@@ -139,7 +139,6 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   className='mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:border-indigo-500 focus:ring-indigo-500'
                 />
               </div>
-              import {InputField} from './InputField';
               <button
                 type='submit'
                 className='w-full rounded-md bg-indigo-600 px-4 py-2 text-white font-medium hover:bg-indigo-700 dark:hover:bg-indigo-500 transition'
