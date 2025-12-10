@@ -1,6 +1,6 @@
 export const FeatureGrid = () => {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:my-16">
+    <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:my-16">
       <div className="mx-auto max-w-lg text-center">
         <h2 className="text-3xl/tight font-bold text-gray-900 sm:text-4xl dark:text-white">
           Features for growth
@@ -49,6 +49,6 @@ export const FeatureGrid = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

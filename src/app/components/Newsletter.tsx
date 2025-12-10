@@ -1,6 +1,6 @@
 export const Newsletter = () => {
   return (
-    <div className='mx-auto px-4 py-32 sm:px-6 lg:px-8 bg-white dark:bg-indigo-900'>
+    <section className='mx-auto px-4 py-32 sm:px-6 lg:px-8 border-y border-gray-200 dark:border-gray-700'>
       <div className='mx-auto max-w-prose text-center'>
         <h2 className='text-2xl font-semibold text-gray-900 sm:text-3xl dark:text-white'>
           Sign up for our newsletter
@@ -24,7 +24,7 @@ export const Newsletter = () => {
             type='email'
             id='Email'
             placeholder='Enter your email'
-            className='h-12 w-full rounded border-gray-300 shadow-sm dark:border-gray-600 dark:bg-gray-900 dark:text-white p-2'
+            className='h-12 w-full rounded border-gray-300 shadow-sm dark:border-gray-600 dark:bg-white dark:text-white p-2'
           />
         </label>
 
@@ -35,6 +35,6 @@ export const Newsletter = () => {
           Sign Up
         </button>
       </form>
-    </div>
+    </section>
   )
 }
