@@ -36,7 +36,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
           </a>
           <div className='flex flex-1 items-center justify-end md:justify-between'>
             <nav aria-label='Global' className='hidden md:block'>
-              <ul className='flex items-center gap-6 text-sm'>
+              <ul className='flex items-center gap-6 text-md'>
                 <li>
                   <a
                     className='text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75'

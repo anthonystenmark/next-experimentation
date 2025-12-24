@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
+import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
 
 const geistSans = Geist({
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   description: 'A Next.js project integrated with Optimizely for A/B testing and feature flagging.'
 }
 
-export default function RootLayout ({
+export default function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode
@@ -29,11 +30,12 @@ export default function RootLayout ({
       <head>
         <link
           rel='preload'
-          href='//cdn.optimizely.com/js/12345678.js'
+          href='//cdn.optimizely.com/js/5079706295336960.js'
           as='script'
         />
         <link rel='preconnect' href='//logx.optimizely.com' />
         <script src='https://cdn.optimizely.com/js/5079706295336960.js'></script>
+        <GoogleTagManager gtmId="GTM-NGPJ62BF" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Header transparent />
