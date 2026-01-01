@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useState } from 'react'
 import { InputField } from './InputField'
 
@@ -15,11 +16,11 @@ export const Header = ({ transparent = false }: HeaderProps) => {
         className={
           transparent
             ? 'absolute top-0 left-0 w-full z-50 bg-transparent'
-            : 'bg-white dark:bg-gray-900'
+            : 'bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800'
         }
       >
         <div className='mx-auto flex h-16 max-w-7xl items-center gap-8 px-4 sm:px-6 lg:px-8'>
-          <a className='block text-indigo-600 dark:text-indigo-600' href='#'>
+          <Link className='block text-indigo-600 dark:text-indigo-600' href='/'>
             <span className='sr-only'>Home</span>
             <svg
               className='h-8'
@@ -33,41 +34,41 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                 fill='currentColor'
               ></path>
             </svg>
-          </a>
+          </Link>
           <div className='flex flex-1 items-center justify-end md:justify-between'>
             <nav aria-label='Global' className='hidden md:block'>
               <ul className='flex items-center gap-6 text-md'>
                 <li>
-                  <a
+                  <Link
                     className='text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75'
-                    href='#'
+                    href='/about'
                   >
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className='text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75'
-                    href='#'
+                    href='/services'
                   >
                     Services
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className='text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75'
-                    href='#'
+                    href='/projects'
                   >
                     Projects
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className='text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75'
-                    href='#'
+                    href='/blog'
                   >
                     Blog
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -79,12 +80,12 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                 >
                   Login
                 </button>
-                <a
+                <Link
                   className='hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block dark:bg-gray-800 dark:text-white dark:hover:text-white/75'
-                  href='#'
+                  href='/register'
                 >
                   Register
-                </a>
+                </Link>
               </div>
               <button className='block rounded-sm bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden dark:bg-gray-800 dark:text-white dark:hover:text-white/75'>
                 <span className='sr-only'>Toggle menu</span>
