@@ -1,4 +1,10 @@
 import { Container } from '../../components/Container'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Projects | Case Studies',
+    description: 'Discover how we help our clients achieve their business goals through rigorous experimentation.'
+}
 
 const projects = [
     {

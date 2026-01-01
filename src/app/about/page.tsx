@@ -1,4 +1,10 @@
 import { Container } from '../../components/Container'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'About | Opti Next Experimentation',
+    description: 'Learn about our mission to empower teams through real-time experimentation.'
+}
 
 export default function AboutPage() {
     return (

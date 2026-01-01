@@ -1,4 +1,10 @@
 import { Container } from '../../components/Container'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Services | Our Expertise',
+    description: 'Explore our comprehensive suite of experimentation tools and services.'
+}
 
 const services = [
     {

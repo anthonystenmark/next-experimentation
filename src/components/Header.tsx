@@ -143,6 +143,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
               </div>
               <button
                 type='submit'
+                id='login-button'
                 className='w-full rounded-md bg-indigo-600 px-4 py-2 text-white font-medium hover:bg-indigo-700 dark:hover:bg-indigo-500 transition'
               >
                 Sign in

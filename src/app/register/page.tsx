@@ -1,6 +1,12 @@
 import { Container } from '../../components/Container'
 import { InputField } from '../../components/InputField'
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Register | Join the Platform',
+    description: 'Create an account to start your experimentation journey.'
+}
 
 export default function RegisterPage() {
     return (

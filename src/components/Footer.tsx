@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export const Footer = () => (
   <footer className='lg:mt-16'>
     <div className='mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8'>
@@ -58,39 +60,39 @@ export const Footer = () => (
 
       <ul className='mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12'>
         <li>
-          <a
+          <Link
             className='text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75'
-            href='#'
+            href='/about'
           >
             About
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a
+          <Link
             className='text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75'
-            href='#'
+            href='/services'
           >
             Services
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a
+          <Link
             className='text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75'
-            href='#'
+            href='/projects'
           >
             Projects
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a
+          <Link
             className='text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75'
-            href='#'
+            href='/blog'
           >
             Blog
-          </a>
+          </Link>
         </li>
       </ul>
 

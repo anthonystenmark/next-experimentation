@@ -1,4 +1,10 @@
 import { Container } from '../../components/Container'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Blog | Insights & Engineering',
+    description: 'Read the latest updates on web development, experimentation, and digital strategy.'
+}
 
 const posts = [
     {
