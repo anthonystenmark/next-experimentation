@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Opti Next Experimentation',
-  description: 'A Next.js project integrated with Optimizely for A/B testing and feature flagging.'
+  title: 'Ipsum Inc - Opti Next Experimentation',
+  description: 'A Next.js project integrated with Optimizely for A/B testing, feature flagging and CMS.'
 }
 
 export default function RootLayout({
