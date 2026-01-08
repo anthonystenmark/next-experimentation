@@ -30,11 +30,11 @@ export default function RootLayout({
       <head>
         <link
           rel='preload'
-          href='//cdn.optimizely.com/js/5079706295336960.js'
+          href='//cdn.optimizely.com/js/5176819565985792.js'
           as='script'
         />
         <link rel='preconnect' href='//logx.optimizely.com' />
-        <script src='https://cdn.optimizely.com/js/5079706295336960.js'></script>
+        <script src='https://cdn.optimizely.com/js/5176819565985792.js'></script>
         <GoogleTagManager gtmId="GTM-NGPJ62BF" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
