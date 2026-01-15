@@ -1,33 +1,81 @@
-import { Container } from '../../components/Container'
+
 import { Metadata } from 'next'
+import { fetchContent } from '@/lib/optimizely-graph'
+import Link from 'next/link'
+import { Container } from '../../components/Container'
 
 export const metadata: Metadata = {
     title: 'Blog | Insights & Engineering',
     description: 'Read the latest updates on web development, experimentation, and digital strategy.'
 }
 
-const posts = [
-    {
-        title: 'Mastering Next.js Route Handlers',
-        excerpt: 'Learn how to build powerful API routes with the latest Next.js features.',
-        date: 'Dec 28, 2025',
-        category: 'Development'
-    },
-    {
-        title: 'The Psychology of A/B Testing',
-        excerpt: 'Explaining why small changes can lead to big differences in user behavior.',
-        date: 'Dec 15, 2025',
-        category: 'Experimentation'
-    },
-    {
-        title: 'Integrating Optimizely with Tailwind CSS',
-        excerpt: 'A step-by-step guide to styling your experimentation variants.',
-        date: 'Nov 30, 2025',
-        category: 'Tutorial'
+interface BlogPost {
+    _metadata: {
+        displayName: string
+        url: {
+            hierarchical: string
+        }
+        published: string
     }
-]
+    MetaDescription: string
+    Image: {
+        url: {
+            default: string
+        }
+    }
+}
 
-export default function BlogPage() {
+interface BlogResponse {
+    ArticlePage: {
+        items: BlogPost[]
+    }
+}
+
+async function getBlogPosts() {
+    const data = await fetchContent<BlogResponse>(`
+        query GetBlogPosts {
+            ArticlePage(orderBy: { _metadata: { published: DESC } }) {
+                items {
+                    _metadata {
+                        displayName
+                        url {
+                            hierarchical
+                        }
+                        published
+                    }
+                    MetaDescription
+                    Image {
+                        url {
+                            default
+                        }
+                    }
+                }
+            }
+        }
+    `)
+    const items = data?.ArticlePage?.items || [];
+    const posts = items.map((item) => ({
+        title: item._metadata.displayName,
+        summary: item.MetaDescription,
+        published: item._metadata.published,
+        url: item._metadata.url.hierarchical,
+        image: item.Image.url.default
+    }))
+    return posts || []
+}
+
+function formatDate(dateString: string) {
+    if (!dateString) return ''
+    return new Date(dateString).toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+    })
+}
+
+export default async function BlogPage() {
+    const posts = await getBlogPosts()
+
     return (
         <main className="pt-24 pb-16">
             <Container>
@@ -41,22 +89,29 @@ export default function BlogPage() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {posts.map((post) => (
-                        <article key={post.title} className="flex flex-col">
-                            <div className="mb-4 text-sm text-indigo-600 dark:text-indigo-400 font-medium">
-                                {post.category} • {post.date}
-                            </div>
-                            <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white hover:text-indigo-600 transition-colors cursor-pointer leading-snug">
-                                {post.title}
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1">
-                                {post.excerpt}
-                            </p>
-                            <div className="text-sm font-semibold text-gray-900 dark:text-white border-b-2 border-indigo-600 w-fit pb-1 cursor-pointer">
-                                Read More
-                            </div>
-                        </article>
-                    ))}
+                    {posts.map((post) => {
+                        const slug = post.url || '#';
+
+                        return (
+                            <Link href={`${slug}`} key={post.url} className="group flex flex-col">
+                                <article className="flex flex-col h-full">
+                                    <div className="mb-4 text-sm text-indigo-600 dark:text-indigo-400 font-medium">
+                                        {formatDate(post.published)}
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-indigo-600 transition-colors cursor-pointer leading-snug">
+                                        {post.title}
+                                    </h3>
+                                    <img src={post.image} alt={post.title} className="w-full h-64 object-cover mb-4" />
+                                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1">
+                                        {post.summary}
+                                    </p>
+                                    <div className="text-sm font-semibold text-gray-900 dark:text-white border-b-2 border-indigo-600 w-fit pb-1 group-hover:border-indigo-500">
+                                        Read More
+                                    </div>
+                                </article>
+                            </Link>
+                        )
+                    })}
                 </div>
             </Container>
         </main>
