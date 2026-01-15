@@ -16,7 +16,6 @@ const client = new ApolloClient({
 
 export const fetchContent = async <T>(query: string, variables?: Record<string, any>): Promise<T> => {
     try {
-        console.log(query, variables);
         const response = await client.query({
             query: gql`${query}`,
             variables,
