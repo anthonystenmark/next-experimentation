@@ -39,8 +39,6 @@ async function getBlogPost(slug: string) {
         }
     `, { slug: `/blog/${slug}/` })
 
-    console.log(data);
-
     const post = {
         title: data.ArticlePage.item.Heading,
         body: data.ArticlePage.item.MainBody.html,

@@ -13,7 +13,7 @@ interface BlogPost {
     _metadata: {
         displayName: string
         url: {
-            hierarchical: string
+            default: string
         }
         published: string
     }
@@ -39,7 +39,7 @@ async function getBlogPosts() {
                     _metadata {
                         displayName
                         url {
-                            hierarchical
+                            default
                         }
                         published
                     }
@@ -58,7 +58,7 @@ async function getBlogPosts() {
         title: item._metadata.displayName,
         summary: item.MetaDescription,
         published: item._metadata.published,
-        url: item._metadata.url.hierarchical,
+        url: item._metadata.url.default,
         image: item.Image.url.default
     }))
     return posts || []
@@ -79,7 +79,7 @@ export default async function BlogPage() {
     return (
         <main className="pt-24 pb-16">
             <Container>
-                <div className="max-w-3xl mb-16">
+                <div className="mb-16">
                     <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl mb-8">
                         Insights & Engineering
                     </h1>
@@ -91,7 +91,6 @@ export default async function BlogPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {posts.map((post) => {
                         const slug = post.url || '#';
-
                         return (
                             <Link href={`${slug}`} key={post.url} className="group flex flex-col">
                                 <article className="flex flex-col h-full">

@@ -35,6 +35,7 @@ export default function RootLayout({
         />
         <link rel='preconnect' href='//logx.optimizely.com' />
         <script src='https://cdn.optimizely.com/js/5176819565985792.js'></script>
+        <script src='https://app-epsaanthonyqqz97p001.cms.optimizely.com/util/javascript/communicationinjector.js'></script>
         <GoogleTagManager gtmId="GTM-NGPJ62BF" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
