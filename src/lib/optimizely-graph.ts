@@ -3,6 +3,8 @@ import { ApolloClient, HttpLink, InMemoryCache, gql } from "@apollo/client";
 const endpoint = process.env.OPTIMIZELY_GRAPH_ENDPOINT;
 const apiKey = process.env.OPTIMIZELY_GRAPH_SINGLE_KEY;
 
+console.log('toolbar test');
+
 if (!endpoint || !apiKey) {
     console.warn(
         'Optimizely Graph environment variables missing. Please check OPTIMIZELY_GRAPH_ENDPOINT and OPTIMIZELY_GRAPH_SINGLE_KEY.'
