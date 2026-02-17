@@ -1,0 +1,319 @@
+{
+  "propertyGroups": [],
+  "contentTypes": [
+    {
+      "key": "StandardPage",
+      "displayName": "Standard Page",
+      "description": "A basic page with only a RTE",
+      "baseType": "_page",
+      "isContract": false,
+      "sortOrder": 0,
+      "mayContainTypes": [
+        "*"
+      ],
+      "mediaFileExtensions": [],
+      "compositionBehaviors": [],
+      "contracts": [],
+      "created": "2023-01-20T16:17:37.0166667+00:00",
+      "lastModified": "2026-01-05T04:31:49.1135871+00:00",
+      "lastModifiedBy": "",
+      "properties": {
+        "MainBody": {
+          "type": "richText",
+          "displayName": "Main body",
+          "description": "The main body",
+          "localized": true,
+          "required": false,
+          "group": "Information",
+          "sortOrder": 1,
+          "allowedTypes": [],
+          "restrictedTypes": []
+        }
+      }
+    },
+    {
+      "key": "ArticlePage",
+      "displayName": "Article Page",
+      "description": "Create a new article/post",
+      "baseType": "_page",
+      "isContract": false,
+      "sortOrder": 0,
+      "mayContainTypes": [
+        "*"
+      ],
+      "mediaFileExtensions": [],
+      "compositionBehaviors": [],
+      "contracts": [],
+      "created": "2023-02-23T13:03:15.5833333+00:00",
+      "lastModified": "2026-01-05T04:31:49.1027893+00:00",
+      "lastModifiedBy": "",
+      "properties": {
+        "Heading": {
+          "type": "string",
+          "displayName": "Heading",
+          "description": "",
+          "localized": true,
+          "required": false,
+          "group": "Information",
+          "sortOrder": 10,
+          "allowedTypes": [],
+          "restrictedTypes": []
+        },
+        "MetaDescription": {
+          "type": "string",
+          "displayName": "Short Description",
+          "description": "Used for display cards and SEO meta fields",
+          "localized": true,
+          "required": false,
+          "group": "Information",
+          "sortOrder": 20,
+          "allowedTypes": [],
+          "restrictedTypes": []
+        },
+        "MainBody": {
+          "type": "richText",
+          "displayName": "Main Body",
+          "description": "",
+          "localized": true,
+          "required": false,
+          "group": "Information",
+          "sortOrder": 30,
+          "allowedTypes": [],
+          "restrictedTypes": []
+        },
+        "Image": {
+          "type": "contentReference",
+          "displayName": "Image",
+          "description": "",
+          "localized": false,
+          "required": false,
+          "group": "Information",
+          "sortOrder": 40,
+          "allowedTypes": [],
+          "restrictedTypes": []
+        }
+      }
+    },
+    {
+      "key": "FolderPage",
+      "displayName": "Folder Page",
+      "description": "A page which allows you to structure pages.",
+      "baseType": "_page",
+      "isContract": false,
+      "sortOrder": 0,
+      "mayContainTypes": [
+        "*"
+      ],
+      "mediaFileExtensions": [],
+      "compositionBehaviors": [],
+      "contracts": [],
+      "created": "2023-02-23T13:03:16.13+00:00",
+      "lastModified": "2023-02-23T13:03:16.13+00:00",
+      "lastModifiedBy": "",
+      "properties": {}
+    },
+    {
+      "key": "StartPage",
+      "displayName": "Start Page",
+      "description": "",
+      "baseType": "_page",
+      "isContract": false,
+      "sortOrder": 0,
+      "mayContainTypes": [
+        "*"
+      ],
+      "mediaFileExtensions": [],
+      "compositionBehaviors": [],
+      "contracts": [],
+      "created": "2023-01-20T16:17:37.03+00:00",
+      "lastModified": "2026-01-05T04:31:49.033934+00:00",
+      "lastModifiedBy": "",
+      "properties": {
+        "Heading": {
+          "type": "string",
+          "displayName": "Heading",
+          "description": "",
+          "localized": true,
+          "required": false,
+          "group": "Information",
+          "sortOrder": 10,
+          "allowedTypes": [],
+          "restrictedTypes": []
+        },
+        "CompanyName": {
+          "type": "string",
+          "displayName": "Company Name",
+          "description": "",
+          "localized": true,
+          "required": false,
+          "group": "Information",
+          "sortOrder": 10,
+          "allowedTypes": [],
+          "restrictedTypes": []
+        },
+        "Body": {
+          "type": "richText",
+          "displayName": "Body",
+          "description": "",
+          "localized": true,
+          "required": false,
+          "group": "Information",
+          "sortOrder": 20,
+          "allowedTypes": [],
+          "restrictedTypes": []
+        },
+        "Logo": {
+          "type": "contentReference",
+          "displayName": "Logo",
+          "description": "",
+          "localized": false,
+          "required": false,
+          "group": "Information",
+          "sortOrder": 20,
+          "allowedTypes": [],
+          "restrictedTypes": []
+        },
+        "BannerImages": {
+          "type": "array",
+          "displayName": "Banner Images",
+          "description": "Add images to show on the home page",
+          "localized": true,
+          "required": false,
+          "group": "Information",
+          "sortOrder": 30,
+          "allowedTypes": [],
+          "restrictedTypes": [],
+          "items": {
+            "type": "content",
+            "allowedTypes": [],
+            "restrictedTypes": []
+          }
+        },
+        "DisableHeadDeploymentWebhook": {
+          "type": "boolean",
+          "displayName": "Disable Head Deployment Webhook",
+          "description": "",
+          "localized": false,
+          "required": false,
+          "group": "Advanced",
+          "sortOrder": 100,
+          "allowedTypes": [],
+          "restrictedTypes": []
+        }
+      }
+    },
+    {
+      "key": "ImageMedia",
+      "displayName": "ImagesMedia",
+      "description": "Used for generic image types",
+      "baseType": "_image",
+      "isContract": false,
+      "sortOrder": 0,
+      "mayContainTypes": [],
+      "mediaFileExtensions": [],
+      "compositionBehaviors": [],
+      "contracts": [],
+      "created": "2025-12-10T12:18:39.3241085+00:00",
+      "lastModified": "2023-02-17T12:36:18.3066667+00:00",
+      "lastModifiedBy": "",
+      "properties": {}
+    },
+    {
+      "key": "BlankExperience",
+      "displayName": "Blank Experience",
+      "description": "An experience without a predefined layout.",
+      "baseType": "_experience",
+      "isContract": false,
+      "sortOrder": 0,
+      "mayContainTypes": [
+        "*"
+      ],
+      "mediaFileExtensions": [],
+      "compositionBehaviors": [],
+      "contracts": [],
+      "created": "2025-12-10T12:18:34.9149762+00:00",
+      "lastModified": "2025-12-10T12:18:34.9149762+00:00",
+      "lastModifiedBy": "",
+      "properties": {}
+    },
+    {
+      "key": "GenericMedia",
+      "displayName": "Generic media",
+      "description": "Used for generic media without any dedicated content type.",
+      "baseType": "_media",
+      "isContract": false,
+      "sortOrder": 500,
+      "mayContainTypes": [],
+      "mediaFileExtensions": [],
+      "compositionBehaviors": [],
+      "contracts": [],
+      "created": "2025-12-10T12:18:39.2274158+00:00",
+      "lastModified": "2025-12-10T12:18:41.1171029+00:00",
+      "lastModifiedBy": "",
+      "properties": {}
+    },
+    {
+      "key": "image",
+      "displayName": "Image",
+      "description": "Used for image assets.",
+      "baseType": "_image",
+      "isContract": false,
+      "sortOrder": 510,
+      "mayContainTypes": [],
+      "mediaFileExtensions": [
+        "jpg",
+        "jpeg",
+        "jpe",
+        "ico",
+        "gif",
+        "bmp",
+        "heif",
+        "png",
+        "svg",
+        "tiff",
+        "webp"
+      ],
+      "compositionBehaviors": [],
+      "contracts": [],
+      "created": "2023-10-11T17:16:56.38+00:00",
+      "lastModified": "2023-10-11T17:16:56.38+00:00",
+      "lastModifiedBy": "",
+      "properties": {}
+    },
+    {
+      "key": "VideoMedia",
+      "displayName": "Video media",
+      "description": "Used for video assets.",
+      "baseType": "_video",
+      "isContract": false,
+      "sortOrder": 520,
+      "mayContainTypes": [],
+      "mediaFileExtensions": [
+        "avi",
+        "av1",
+        "flv",
+        "m4v",
+        "mkv",
+        "mov",
+        "mp4",
+        "mp4v",
+        "mpg",
+        "ogg",
+        "ogv",
+        "qt",
+        "vc1",
+        "vob",
+        "webm",
+        "wmv"
+      ],
+      "compositionBehaviors": [],
+      "contracts": [],
+      "created": "2025-12-10T12:18:39.4064698+00:00",
+      "lastModified": "2025-12-10T12:18:39.4064698+00:00",
+      "lastModifiedBy": "",
+      "properties": {}
+    }
+  ],
+  "displayTemplates": [],
+  "lastModified": "2026-02-16T06:06:03.0311822+00:00"
+}
