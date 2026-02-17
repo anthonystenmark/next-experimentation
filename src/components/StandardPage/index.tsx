@@ -22,8 +22,8 @@ export default function StandardPage({ content }: Props) {
   return (
     <main className="pt-24 pb-16">
       <Container>
-        <div className="max-w-3xl mx-auto text-gray-900 dark:text-white">
-          <RichText {...pa('MainBody')} content={content.MainBody?.json} />
+        <div {...pa('MainBody')} className="max-w-3xl mx-auto text-gray-900 dark:text-white">
+          <RichText content={content.MainBody?.json} />
         </div>
       </Container>
     </main>
