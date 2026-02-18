@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl mb-12">
             {post.title}
           </h1>
-          <div dangerouslySetInnerHTML={{ __html: post.body }} className={`text-xl text-gray-600 dark:text-gray-300 ${blogstyles.contentWrapper}`} />
+          <div dangerouslySetInnerHTML={{ __html: post.body }} className={`text-xl text-gray-600 dark:text-gray-300`} />
         </article>
       </Container>
     </main>
