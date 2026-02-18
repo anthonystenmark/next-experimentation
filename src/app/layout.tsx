@@ -4,14 +4,16 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { GoogleTagManager } from '@next/third-parties/google'
 import StandardPage, { StandardPageContentType } from '@/components/StandardPage'
+import ArticlePage, { ArticlePageContentType } from '@/components/ArticlePage'
 import { initContentTypeRegistry } from '@optimizely/cms-sdk';
 import { initReactComponentRegistry } from '@optimizely/cms-sdk/react/server';
 import './globals.css'
 
-initContentTypeRegistry([StandardPageContentType]);
+initContentTypeRegistry([StandardPageContentType, ArticlePageContentType]);
 initReactComponentRegistry({
   resolver: {
     StandardPage,
+    ArticlePage,
   },
 });
 
