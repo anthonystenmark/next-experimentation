@@ -33,11 +33,11 @@ export default function ArticlePage({ content }: Props) {
     <main className="pt-24 pb-16">
       <Container>
         <article className="mb-8 mx-auto">
-          <img {...pa('Image')} src={src(content.Image)} alt={"alt"} className="w-full h-64 object-cover mb-4" />
-          <h1 {...pa('Heading')} className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl mb-12">
+          <img {...pa('Image')} data-epi-edit="Image" src={src(content.Image)} alt={"alt"} className="w-full h-64 object-cover mb-4" />
+          <h1 {...pa('Heading')} data-epi-edit="Heading" className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl mb-12">
             {content.Heading}
           </h1>
-          <div {...pa('MainBody')} className={`text-xl text-gray-600 dark:text-gray-300 ${blogstyles.contentWrapper}`}>
+          <div {...pa('MainBody')} data-epi-edit="MainBody" className={`text-xl text-gray-600 dark:text-gray-300 ${blogstyles.contentWrapper}`}>
             <RichText content={content.MainBody?.json} />
           </div>
         </article>
