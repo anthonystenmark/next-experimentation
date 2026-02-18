@@ -1,7 +1,7 @@
 import { Container } from '@/components/Container'
 import { client } from '@/lib/optimizely-cms-client'
 import { notFound } from 'next/navigation'
-import blogstyles from './blogstyles.module.css'
+
 
 interface BlogPost {
   Heading: string

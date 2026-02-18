@@ -2,6 +2,7 @@ import { contentType, ContentProps } from '@optimizely/cms-sdk';
 import { RichText } from '@optimizely/cms-sdk/react/richText';
 import { Container } from '@/components/Container'
 import { getPreviewUtils } from '@optimizely/cms-sdk/react/server';
+import blogstyles from './blogstyles.module.css'
 
 export const ArticlePageContentType = contentType({
   key: 'ArticlePage',
@@ -36,7 +37,7 @@ export default function ArticlePage({ content }: Props) {
           <h1 {...pa('Heading')} className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl mb-12">
             {content.Heading}
           </h1>
-          <div {...pa('MainBody')} className={`text-xl text-gray-600 dark:text-gray-300`}>
+          <div {...pa('MainBody')} className={`text-xl text-gray-600 dark:text-gray-300 ${blogstyles.contentWrapper}`}>
             <RichText content={content.MainBody?.json} />
           </div>
         </article>
