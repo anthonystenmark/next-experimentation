@@ -1,15 +1,31 @@
+import { contentType, ContentProps } from '@optimizely/cms-sdk';
+import { Container } from '@/components/Container'
+import { getPreviewUtils } from '@optimizely/cms-sdk/react/server';
+import { client } from '@/lib/optimizely-cms-client';
+import { ArticlePageContentType } from '../ArticlePage';
+import { RichText } from '@optimizely/cms-sdk/react/richText';
+import Link from 'next/link';
 
-import { Metadata } from 'next'
-import { client } from '@/lib/optimizely-cms-client'
-import Link from 'next/link'
-import { Container } from '../../components/Container'
+export const BlogListPageContentType = contentType({
+  key: 'BlogListPage',
+  baseType: '_page',
+  properties: {
+    Heading: {
+      type: 'string',
+    },
+    Description: {
+      type: 'richText',
+    },
+  },
+});
 
-export const metadata: Metadata = {
-  title: 'Blog | Insights & Engineering',
-  description: 'Read the latest updates on web development, experimentation, and digital strategy.'
-}
+type Props = {
+  content: ContentProps<typeof BlogListPageContentType>;
+};
 
-interface BlogPost {
+type ArticlePageData = ContentProps<typeof ArticlePageContentType>;
+
+interface BlogPostItem {
   _metadata: {
     displayName: string
     url: {
@@ -17,7 +33,7 @@ interface BlogPost {
     }
     published: string
   }
-  MetaDescription: string
+  MetaDescription: ArticlePageData['MetaDescription']
   Image: {
     url: {
       default: string
@@ -27,11 +43,12 @@ interface BlogPost {
 
 interface BlogResponse {
   ArticlePage: {
-    items: BlogPost[]
+    items: BlogPostItem[]
   }
 }
 
 async function getBlogPosts() {
+  // Using client.request is currently the most efficient way to fetch a sorted list of specific content types
   const data = await client.request(`
         query GetBlogPosts {
             ArticlePage(orderBy: { _metadata: { published: DESC } }) {
@@ -53,39 +70,33 @@ async function getBlogPosts() {
             }
         }
     `, {}) as BlogResponse
+
   const items = data?.ArticlePage?.items || [];
-  const posts = items.map((item) => ({
+
+  return items.map((item) => ({
     title: item._metadata.displayName,
     summary: item.MetaDescription,
     published: item._metadata.published,
     url: item._metadata.url.default,
-    image: item.Image.url.default
+    image: item.Image?.url?.default || undefined
   }))
-  return posts || []
+
 }
 
-function formatDate(dateString: string) {
-  if (!dateString) return ''
-  return new Date(dateString).toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric'
-  })
-}
-
-export default async function BlogPage() {
-  const posts = await getBlogPosts()
+export default async function BlogListPage({ content }: Props) {
+  const { pa } = getPreviewUtils(content);
+  const posts = await getBlogPosts();
 
   return (
     <main className="pt-24 pb-16">
       <Container>
         <div className="mb-16">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl mb-8">
-            Insights & Engineering
+          <h1 {...pa('Heading')} className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl mb-8">
+            {content.Heading || 'Insights & Engineering'}
           </h1>
-          <p className="text-lg leading-8 text-gray-600 dark:text-gray-300">
-            Read the latest updates from our team on web development, experimentation, and digital strategy.
-          </p>
+          <div {...pa('Description')} className="text-lg leading-8 text-gray-600 dark:text-gray-300">
+            <RichText content={content.Description?.json} />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -95,7 +106,7 @@ export default async function BlogPage() {
               <Link href={`${slug}`} key={post.url} className="group flex flex-col">
                 <article className="flex flex-col h-full">
                   <div className="mb-4 text-sm text-indigo-600 dark:text-indigo-400 font-medium">
-                    {formatDate(post.published)}
+                    {post.published}
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-indigo-600 transition-colors cursor-pointer leading-snug">
                     {post.title}
@@ -114,5 +125,5 @@ export default async function BlogPage() {
         </div>
       </Container>
     </main>
-  )
+  );
 }
