@@ -3,21 +3,10 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { GoogleTagManager } from '@next/third-parties/google'
-import StandardPage, { StandardPageContentType } from '@/components/StandardPage'
-import ArticlePage, { ArticlePageContentType } from '@/components/ArticlePage'
-import BlogListPage, { BlogListPageContentType } from '@/components/BlogListPage'
-import { initContentTypeRegistry } from '@optimizely/cms-sdk';
-import { initReactComponentRegistry } from '@optimizely/cms-sdk/react/server';
+import { registerComponents } from '@/lib/registry';
 import './globals.css'
 
-initContentTypeRegistry([StandardPageContentType, ArticlePageContentType, BlogListPageContentType]);
-initReactComponentRegistry({
-  resolver: {
-    StandardPage,
-    ArticlePage,
-    BlogListPage,
-  },
-});
+registerComponents();
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
