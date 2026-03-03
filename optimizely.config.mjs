@@ -1,5 +1,5 @@
 import { buildConfig } from '@optimizely/cms-sdk';
 
 export default buildConfig({
-  components: ['./src/components/**/*.tsx'],
+  components: ['./src/components/cms/**/*.tsx'],
 });

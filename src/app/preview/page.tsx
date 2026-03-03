@@ -14,8 +14,6 @@ export default async function Page({ searchParams }: Props) {
     (await searchParams) as PreviewParams
   );
 
-  console.log(response);
-
   return (
     <>
       <Script
