@@ -2,7 +2,7 @@ import { contentType, ContentProps } from '@optimizely/cms-sdk';
 import { Container } from '@/components/Container'
 import { getPreviewUtils } from '@optimizely/cms-sdk/react/server';
 import { client } from '@/lib/optimizely-cms-client';
-import { ArticlePageContentType } from '../ArticlePage';
+import { ArticlePageContentType } from '@/components/cms/ArticlePage';
 import { RichText } from '@optimizely/cms-sdk/react/richText';
 import Link from 'next/link';
 

@@ -1,6 +1,6 @@
 import { contentType, ContentProps } from '@optimizely/cms-sdk';
 import { RichText } from '@optimizely/cms-sdk/react/richText';
-import { Container } from '../../components/Container'
+import { Container } from '@/components/Container'
 import { getPreviewUtils } from '@optimizely/cms-sdk/react/server';
 
 export const StandardPageContentType = contentType({
@@ -18,7 +18,7 @@ type Props = {
 };
 
 export default function StandardPage({ content }: Props) {
-  const { pa, src } = getPreviewUtils(content);
+  const { pa } = getPreviewUtils(content);
   return (
     <main className="pt-24 pb-16">
       <Container>
