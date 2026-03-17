@@ -1,8 +1,8 @@
 import { type PreviewParams } from '@optimizely/cms-sdk';
 import { OptimizelyComponent } from '@optimizely/cms-sdk/react/server';
 import { PreviewComponent } from '@optimizely/cms-sdk/react/client';
-import Script from 'next/script';
 import { client } from '@/lib/optimizely-cms-client';
+import Script from 'next/script';
 
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;

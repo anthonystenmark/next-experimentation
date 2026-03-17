@@ -3,9 +3,7 @@ import {
   ComponentContainerProps,
   getPreviewUtils,
   OptimizelyComposition,
-  OptimizelyComponent
 } from '@optimizely/cms-sdk/react/server';
-import { Container } from '@/components/Container'
 
 export const LandingPageContentType = contentType({
   key: 'LandingPage',

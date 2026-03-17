@@ -2,7 +2,6 @@ import { contentType, ContentProps } from '@optimizely/cms-sdk';
 import { RichText } from '@optimizely/cms-sdk/react/richText';
 import { Container } from '@/components/Container'
 import { getPreviewUtils } from '@optimizely/cms-sdk/react/server';
-import blogstyles from './blogstyles.module.css'
 
 export const ArticlePageContentType = contentType({
   key: 'ArticlePage',

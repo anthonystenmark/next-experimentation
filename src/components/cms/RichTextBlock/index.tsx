@@ -7,6 +7,7 @@ export const RichTextBlockContentType = contentType({
   displayName: 'Rich Text Block',
   baseType: '_component',
   compositionBehaviors: ['elementEnabled'],
+  description: 'A block that displays rich text.',
   properties: {
     text: {
       type: 'richText',
